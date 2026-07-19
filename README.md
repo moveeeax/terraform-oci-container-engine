@@ -9,7 +9,7 @@ pools are managed separately.
 
 ```hcl
 module "cluster" {
-  source = "github.com/cybercapybara/terraform-oci-container-engine"
+  source = "github.com/moveeeax/terraform-oci-container-engine"
 
   compartment_id     = var.compartment_id
   name               = "prod-oke"
