@@ -9,7 +9,11 @@ module "cluster" {
   kubernetes_version = var.kubernetes_version
   cluster_type       = "ENHANCED_CLUSTER"
 
+  # Private API endpoint (the module default), further restricted to the source
+  # ranges in the supplied network security group.
+  is_public_ip_enabled  = false
   endpoint_subnet_id    = var.endpoint_subnet_id
+  endpoint_nsg_ids      = [var.endpoint_nsg_id]
   service_lb_subnet_ids = [var.lb_subnet_id]
 
   freeform_tags = {
@@ -29,12 +33,17 @@ variable "vcn_id" {
 }
 
 variable "kubernetes_version" {
-  description = "Kubernetes version for the example cluster (e.g. v1.29.1)."
+  description = "Kubernetes version for the example cluster (e.g. v1.33.1). Use a version OKE still supports."
   type        = string
 }
 
 variable "endpoint_subnet_id" {
   description = "OCID of the subnet hosting the Kubernetes API endpoint."
+  type        = string
+}
+
+variable "endpoint_nsg_id" {
+  description = "OCID of the network security group that restricts access to the Kubernetes API endpoint."
   type        = string
 }
 
