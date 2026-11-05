@@ -33,7 +33,7 @@ variable "vcn_id" {
 }
 
 variable "kubernetes_version" {
-  description = "Kubernetes version for the example cluster (e.g. v1.33.1). Use a version OKE still supports."
+  description = "Kubernetes version for the example cluster (e.g. v1.36.4). Use a version OKE still supports."
   type        = string
 }
 

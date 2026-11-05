@@ -8,7 +8,7 @@ variables {
   compartment_id     = "ocid1.compartment.oc1..aaaaaaaaexamplecompartment"
   name               = "unit-test-oke"
   vcn_id             = "ocid1.vcn.oc1..aaaaaaaaexamplevcn"
-  kubernetes_version = "v1.33.1"
+  kubernetes_version = "v1.36.4"
   endpoint_subnet_id = "ocid1.subnet.oc1..aaaaaaaaexampleendpointsubnet"
 }
 

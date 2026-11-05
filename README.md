@@ -9,12 +9,12 @@ pools are managed separately.
 
 ```hcl
 module "cluster" {
-  source = "github.com/moveeeax/terraform-oci-container-engine"
+  source = "github.com/moveeeax/terraform-oci-container-engine?ref=v1.1.0"
 
   compartment_id     = var.compartment_id
   name               = "prod-oke"
   vcn_id             = var.vcn_id
-  kubernetes_version = "v1.33.1"
+  kubernetes_version = "v1.36.4"
   cluster_type       = "ENHANCED_CLUSTER"
 
   # Private API endpoint (the default), restricted to the NSG's source ranges.
@@ -64,7 +64,7 @@ A runnable example lives in [`examples/basic`](examples/basic).
 | Name      | Version  |
 |-----------|----------|
 | terraform | >= 1.5   |
-| oci       | >= 5.0   |
+| oci       | >= 9.0   |
 
 Running the module's own test suite (`terraform test`) additionally needs Terraform
 >= 1.7 for `mock_provider`. The tests run fully offline against the mocked provider —
